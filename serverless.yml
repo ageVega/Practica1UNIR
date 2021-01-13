@@ -7,6 +7,9 @@ frameworkVersion: ">=1.1.0"
 provider:
   name: aws
   runtime: python3.8
+  lambdaHashingVersion: "20201221"
+  apiGateway:
+    shouldStartNameWithService: true
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
