@@ -24,7 +24,7 @@ def translate_task(task, source, target):
     return response
 
 
-def get(event, context):
+def getTranslate(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
     # fetch todo from the database
