@@ -33,6 +33,18 @@ def get(event, context):
             'id': event['pathParameters']['id']
         }
     )
+    
+    task = result['Item']['text']
+    
+    source_result = detect_language_task(task)
+    
+    source = source_result['Languages'][0]['LanguageCode']
+    
+    target = event['pathParameters']['language']
+    
+    task_translated = translate_task(task, source, target)
+    
+    result['Item']['text'] = task_translated['TranslatedText']
 
     # create a response
     response = {
