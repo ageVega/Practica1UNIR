@@ -56,6 +56,14 @@ functions:
           method: get
           cors: true
 
+  getTranslate:
+    handler: todos/get.get
+    events:
+      - http:
+          path: todos/{id}/{language}
+          method: get
+          cors: true
+
   update:
     handler: todos/update.update
     events:
