@@ -10,14 +10,14 @@ comprehend = boto3.client('comprehend')
 
 
 def detect_language_task(task):
-    response = comprehend.detect_dominant_language(Text=task)
+    response = comprehend.detect_dominant_language(Text = task)
     
     return response
     
 
 def translate_task(task, source, target):
     response = translate.translate_text(
-        Text=task,
+        Text = task,
         SourceLanguageCode = source,
         TargetLanguageCode = target)
     
